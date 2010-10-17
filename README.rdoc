@@ -1,0 +1,29 @@
+= Stumie
+
+Stumie allows users to fil out their profile once, allowing applications to pull their details from stumie.com.
+
+This gem is a light wrapper consuming the stumie JSON API.
+
+= Examples
+
+== Pulling information for a profile
+
+  require 'stumie'
+
+  Stumie.api_key = 'abcdefg' # your stumie api key
+
+  profile = Stumie.pull 'someone@example.com' #=> { 'email' => 'someone@example.com', 'foo' => 'bar' }
+
+== Errors
+
+If stumie encounters errors (e.g. profile email does not exist or the api key is invalid), <tt>nil</tt> is returned:
+
+  require 'stumie'
+
+  Stumie.api_key = "invalidkey"
+
+  Stumie.pull 'someone@example.com' #=> nil
+
+= Authors
+
+* Dmitry Ratnikov (ratnikov@gmail.com)
