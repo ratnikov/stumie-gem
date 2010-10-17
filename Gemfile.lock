@@ -1,10 +1,12 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    fakeweb (1.2.8)
     test-unit (2.1.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  fakeweb
   test-unit
