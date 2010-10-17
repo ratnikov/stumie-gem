@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/stumie.rb",
+     "stumie.gemspec",
      "test/test_helper.rb",
      "test/unit/stumie_test.rb"
   ]

@@ -1,6 +1,7 @@
 
 require 'net/http'
 require 'json'
+require 'digest/md5'
 
 module Stumie
   extend self
@@ -12,7 +13,9 @@ module Stumie
   def pull(email)
     md5 = Digest::MD5.hexdigest(email)
 
-    parse_json Net::HTTP.get URI.parse(HOST % [ md5, api_key ])
+    response = Net::HTTP.get_response URI.parse(HOST % [ md5, api_key ])
+
+    response.code =~ /2../ ? parse_json(response.body) : nil
   end
 
   private
